@@ -1,6 +1,6 @@
 {
-  "name": "node-typescript-starter",
-  "version": "1.0.0",
+  "name": "@chrisgoncalves/ts-starter",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
