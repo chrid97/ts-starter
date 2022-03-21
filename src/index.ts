@@ -11,10 +11,11 @@ const ignoreContent = `
 
 const prettierContent = `
   {
-    "semi": false,
+    "semi": true,
     "singleQuote": true,
-    "trailingComma": "es5",
-    "arrowParens": "always"
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "tabWidth": 4,
   }
 `;
 
@@ -26,11 +27,11 @@ function main(): void {
 
   rl.question("Project Name: ", (projectName) => {
     const tsconfigContent = fs.readFileSync(
-      `src/templates/tsconfig.json`,
+      `./Node-TypeScript-Starter/src/templates/tsconfig.json`,
       "utf8"
     );
     const eslintConfigContent = fs.readFileSync(
-      `src/templates/.eslintrc.json`,
+      `./Node-TypeScript-Starter/src/templates/.eslintrc.json`,
       "utf8"
     );
     const newDir = `${process.cwd()}/${projectName}`;
