@@ -2,7 +2,7 @@
 
 import readline from "readline";
 import fs from "fs";
-import { execSync } from "child_process";
+import { exec, execSync } from "child_process";
 
 const ignoreContent = `
   node_modules
@@ -37,7 +37,7 @@ function main(): void {
     const newDir = `${process.cwd()}/${projectName}`;
     fs.mkdirSync(newDir);
     process.chdir(newDir);
-    execSync("git init");
+    initiliazeGitRepo();
     fs.mkdirSync(`${process.cwd()}/src`);
     writeFile("/src/index.ts");
     writeFile("README.md", `# ${projectName}`);
@@ -64,6 +64,12 @@ function writeFile(file: string, data = ""): void {
 }
 
 main();
+
+function initiliazeGitRepo(): void {
+  execSync("git init");
+  execSync("git add .");
+  execSync("commit -m 'Initial Commit'");
+}
 
 function installPackages(): void {
   console.log("npm init");
