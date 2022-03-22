@@ -15,7 +15,7 @@ const prettierContent = `
     "singleQuote": true,
     "trailingComma": "all",
     "arrowParens": "always",
-    "tabWidth": 4,
+    "tabWidth": 4
   }
 `;
 
