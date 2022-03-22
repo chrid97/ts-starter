@@ -52,6 +52,11 @@ function main(): void {
     console.log(`Project Created!`);
     process.exit(0);
   });
+
+  rl.on("close", () => {
+    console.log(`\nProcess cancelled`);
+    process.exit(0);
+  });
 }
 
 function writeFile(file: string, data = ""): void {
