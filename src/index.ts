@@ -68,7 +68,7 @@ main();
 function initiliazeGitRepo(): void {
   execSync("git init");
   execSync("git add .");
-  execSync("commit -m 'Initial Commit'");
+  // execSync("git commit -m 'Initial Commit'");
 }
 
 function installPackages(): void {
