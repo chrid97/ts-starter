@@ -1,1 +1,6 @@
 /target
+/node_modules
+tsconfig.json
+.prettierrc
+package.json
+package-lock.json
