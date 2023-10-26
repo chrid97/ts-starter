@@ -63,6 +63,10 @@ fn update_tsconfig() {
         String::from("noFallthroughCasesInSwitch"),
         CompilerOptions::Boolean(true),
     );
+    let _ = &json.compiler_options.insert(
+        String::from("noImplicitAny"),
+        CompilerOptions::Boolean(true),
+    );
     let json = serde_json::to_string_pretty(&json).expect("Failed to serialize tsconfig.json");
     fs::write("tsconfig.json", json).expect("Failed to write to tsconfig.json");
 }
@@ -90,6 +94,9 @@ fn install_or_update_prettier() {
         .expect("bzzt");
 }
 
+// check if project already exists and if it does prompting if they want to update the
+// configuration
+// if not prompt the user to create a vite project or next project
 // and eslint
 // create next projects from here
 // when generating a next project remove the boilerplate
